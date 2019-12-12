@@ -11,6 +11,13 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import styled from "styled-components"
+
+const Potato = styled.div`
+  width: 100px;
+  height: 100px;
+  background: blue;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,6 +42,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
+        <Potato>POTATO</Potato>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
